@@ -21,5 +21,5 @@ This project uses docker and it contains a Makefile to be easier to build the im
         * **composite**: Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
         * **decorator**: Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
     * **behavioral**: Examples of behavioral design patterns
-        * **chain of responsability**: Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+        * **chain of responsibility**: Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
 * **tests**: Unit tests for every pattern

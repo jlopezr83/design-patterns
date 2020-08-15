@@ -1,4 +1,4 @@
-from behavioral.chain_responsability import Dispenser
+from behavioral.chain_responsibility import Dispenser
 
 
 class TestDispenser:
