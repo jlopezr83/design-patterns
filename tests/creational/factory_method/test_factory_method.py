@@ -12,11 +12,11 @@ class TestShapeFactory:
         assert circle.get_type() == 'Circle'
 
     def test_it_creates_triangle(self):
-        square = ShapeCreator().shape_factory('triangle', side1=4, side2=3, side3=2)
+        triangle = ShapeCreator().shape_factory('triangle', side1=4, side2=3, side3=2)
 
-        assert square.get_area() == 2.905
-        assert square.get_perimeter() == 9
-        assert square.get_type() == 'Triangle'
+        assert triangle.get_area() == 2.905
+        assert triangle.get_perimeter() == 9
+        assert triangle.get_type() == 'Triangle'
 
     def test_it_creates_square(self):
         square = ShapeCreator().shape_factory('square', height=3)
