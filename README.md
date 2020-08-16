@@ -22,4 +22,5 @@ This project uses docker and it contains a Makefile to be easier to build the im
         * **decorator**: Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
     * **behavioral**: Examples of behavioral design patterns
         * **chain of responsibility**: Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+        * **command**: Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
 * **tests**: Unit tests for every pattern
