@@ -39,6 +39,7 @@ This project uses docker and it contains a Makefile to be easier to build the im
         pass the request along the chain until an object handles it.
         * **command**: Encapsulate a request as an object, thereby letting you parameterize clients 
         with different requests, queue or log requests, and support undoable operations.
+        * **state**: Allow an object to alter its behavior when its internal state changes.
       
 * **tests**: Unit tests for every pattern
 
