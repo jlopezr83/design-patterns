@@ -1,11 +1,11 @@
-import abc
+from abc import ABCMeta, abstractmethod
 
 
-class Command(metaclass=abc.ABCMeta):
+class Command(metaclass=ABCMeta):
     """
     Interface for executing an operation
     """
-    @abc.abstractmethod
+    @abstractmethod
     def execute(self):
         pass
 

@@ -1,4 +1,4 @@
-import abc
+from abc import ABCMeta, abstractmethod
 
 
 class StringFormatter:
@@ -12,11 +12,11 @@ class StringFormatter:
         return self._formatter.format(string)
 
 
-class Formatter(metaclass=abc.ABCMeta):
+class Formatter(metaclass=ABCMeta):
     """
     Implementor
     """
-    @abc.abstractmethod
+    @abstractmethod
     def format(self, string):
         pass
 

@@ -1,4 +1,4 @@
-import abc
+from abc import ABCMeta, abstractmethod
 
 from creational.common.mazes import Maze, Wall, Room, EnchantedRoom, Door, DoorNeedingSpell
 
@@ -28,23 +28,23 @@ class MazeGame:
         return maze
 
 
-class AbstractMazeFactory(metaclass=abc.ABCMeta):
+class AbstractMazeFactory(metaclass=ABCMeta):
     """
     Abstract factory to create different types of mazes
     """
-    @abc.abstractmethod
+    @abstractmethod
     def make_maze(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def make_wall(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def make_room(self, room_id):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def make_door(self, room1, room2):
         pass
 

@@ -1,4 +1,4 @@
-import abc
+from abc import ABCMeta, abstractmethod
 
 
 class Request:
@@ -19,15 +19,15 @@ class Request:
         self._change.update(change)
 
 
-class Handler(metaclass=abc.ABCMeta):
+class Handler(metaclass=ABCMeta):
     def __init__(self):
         self._next = None
 
-    @abc.abstractmethod
+    @abstractmethod
     def set_next(self, handler):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def handle(self, request):
         pass
 
@@ -37,7 +37,7 @@ class ATMDispenserHandler(Handler):
         self._next = handler
         return handler
 
-    @abc.abstractmethod
+    @abstractmethod
     def handle(self, request):
         if self._next:
             return self._next.handle(request)

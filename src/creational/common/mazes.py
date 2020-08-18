@@ -1,10 +1,11 @@
-import abc
+from abc import ABCMeta, abstractmethod
 
 
-class MapSite(metaclass=abc.ABCMeta):
+class MapSite(metaclass=ABCMeta):
     """
     common abstract class for all the components of a maze
     """
+    @abstractmethod
     def enter(self):
         """
         :return: True if it's possible to enter, else False

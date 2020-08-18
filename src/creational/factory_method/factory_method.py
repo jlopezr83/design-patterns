@@ -1,4 +1,4 @@
-import abc
+from abc import ABCMeta, abstractmethod
 from math import pi, sqrt
 
 from structural.decorator import round_decimals
@@ -25,11 +25,11 @@ class ShapeCreator:
             raise ValueError('Invalid shape name')
 
 
-class Shape(metaclass=abc.ABCMeta):
+class Shape(metaclass=ABCMeta):
     """
     Abstract class with common methods for the shapes
     """
-    @abc.abstractmethod
+    @abstractmethod
     def get_area(self):
         """
         Return the area of the shape
@@ -37,7 +37,7 @@ class Shape(metaclass=abc.ABCMeta):
         """
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def get_perimeter(self):
         """
         Return the perimeter of the shape

@@ -1,19 +1,19 @@
-import abc
+from abc import ABCMeta, abstractmethod
 
 
-class AmericanPlugInterface(metaclass=abc.ABCMeta):
+class AmericanPlugInterface(metaclass=ABCMeta):
     """
     Adaptee. Defines an existing interface that needs adapting.
     """
-    @abc.abstractmethod
+    @abstractmethod
     def voltage(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def live(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def neutral(self):
         pass
 
@@ -32,23 +32,23 @@ class AmericanPlug(AmericanPlugInterface):
         return -1
 
 
-class EuropeanPlugInterface(metaclass=abc.ABCMeta):
+class EuropeanPlugInterface(metaclass=ABCMeta):
     """
     Target. Defines the domain-specific interface that Client uses
     """
-    @abc.abstractmethod
+    @abstractmethod
     def voltage(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def live(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def neutral(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def earth(self):
         pass
 

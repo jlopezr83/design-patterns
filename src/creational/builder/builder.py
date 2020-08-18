@@ -1,4 +1,4 @@
-import abc
+from abc import ABCMeta, abstractmethod
 
 from creational.common.mazes import Maze, Room, Door, Wall
 
@@ -25,19 +25,19 @@ class MazeGame:
         return maze_builder.get_maze()
 
 
-class MazeBuilder(metaclass=abc.ABCMeta):
+class MazeBuilder(metaclass=ABCMeta):
     def __init__(self):
         self._maze = None
 
-    @abc.abstractmethod
+    @abstractmethod
     def build_maze(self):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def build_room(self, room_id):
         pass
 
-    @abc.abstractmethod
+    @abstractmethod
     def build_door(self, room1, room2):
         pass
 
