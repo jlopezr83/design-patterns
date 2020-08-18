@@ -32,7 +32,7 @@ class Handler(metaclass=ABCMeta):
         pass
 
 
-class ATMDispenserHandler(Handler):
+class DispenserHandler(Handler):
     def set_next(self, handler):
         self._next = handler
         return handler
@@ -45,7 +45,7 @@ class ATMDispenserHandler(Handler):
         return request
 
 
-class DispenserHandler(ATMDispenserHandler):
+class ATMDispenserHandler(DispenserHandler):
     def __init__(self, change):
         super().__init__()
         self._change = change
@@ -66,10 +66,10 @@ class DispenserHandler(ATMDispenserHandler):
 
 class Dispenser:
     def dispense(self, money):
-        chain1 = DispenserHandler(50)
-        chain2 = DispenserHandler(20)
-        chain3 = DispenserHandler(10)
-        chain4 = DispenserHandler(5)
+        chain1 = ATMDispenserHandler(50)
+        chain2 = ATMDispenserHandler(20)
+        chain3 = ATMDispenserHandler(10)
+        chain4 = ATMDispenserHandler(5)
 
         chain1.set_next(chain2).set_next(chain3).set_next(chain4)
 
