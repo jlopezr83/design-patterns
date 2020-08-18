@@ -1,5 +1,5 @@
 from creational.abstract_factory import MazeGame, MazeFactory, EnchantedMazeFactory
-from common.mazes import Room, EnchantedRoom
+from creational.common.mazes import Room, EnchantedRoom
 
 
 class TestAbstractFactory:

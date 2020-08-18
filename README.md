@@ -11,10 +11,9 @@ This project uses docker and it contains a Makefile to be easier to build the im
 
 ## Components
 * **src**: Source code
-
-    * **common**: Common classes for the examples
     
     * **creational**: Examples of creational design patterns
+        * **common**: Common classes for the examples
         * **abstract factory**: Provide an interface for creating families of related or dependent 
         objects without specifying their concrete classes.
         * **builder**: Separate the construction of a complex object from its representation so that 

@@ -1,6 +1,6 @@
 import abc
 
-from common.mazes import Maze, Wall, Room, EnchantedRoom, Door, DoorNeedingSpell
+from creational.common.mazes import Maze, Wall, Room, EnchantedRoom, Door, DoorNeedingSpell
 
 
 class MazeGame:

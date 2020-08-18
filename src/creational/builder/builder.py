@@ -1,6 +1,6 @@
 import abc
 
-from common.mazes import Maze, Room, Door, Wall
+from creational.common.mazes import Maze, Room, Door, Wall
 
 
 class MazeGame:
