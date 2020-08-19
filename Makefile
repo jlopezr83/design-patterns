@@ -9,4 +9,4 @@ test:
 deploy: build test
 
 
-.PHONY: build run deploy test
+.PHONY: build deploy test
