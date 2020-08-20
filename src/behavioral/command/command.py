@@ -57,7 +57,7 @@ class Invoker:
 
     def execute(self, command_name):
         if command_name not in self._commands:
-            raise ValuError(f'No command {command_name} registered')
+            raise ValueError(f'No command {command_name} registered')
 
         self._commands[command_name].execute()
 
