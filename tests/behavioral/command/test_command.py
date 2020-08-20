@@ -18,7 +18,7 @@ class TestCommand:
         assert computer.get_power() is False
 
     def test_it_creates_complex_command(self):
-        computer = Computer()
+        computer = Computer(virus=10, removed_files=10)
         antivirus = Antivirus()
         commands = ComputerCommands()
 
@@ -31,7 +31,7 @@ class TestCommand:
         assert computer.get_number_removed_files() == 0
 
     def test_it_can_not_remove_virus_with_computer_off(self):
-        computer = Computer()
+        computer = Computer(virus=10, removed_files=10)
         antivirus = Antivirus()
         commands = ComputerCommands()
 

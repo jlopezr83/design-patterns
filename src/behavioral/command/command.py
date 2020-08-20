@@ -79,10 +79,10 @@ class Computer:
     """
     Class to store the status of the computer
     """
-    def __init__(self):
+    def __init__(self, virus=0, removed_files=0):
         self._power = False
-        self._virus = 10
-        self._removed_files = 10
+        self._virus = virus
+        self._removed_files = removed_files
 
     def get_power(self):
         return self._power

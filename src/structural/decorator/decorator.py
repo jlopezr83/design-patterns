@@ -1,5 +1,6 @@
 import functools
 
+
 def round_decimals(_func=None, *, num_decimals=3):
     """
     Decorator to round number of decimals, by default 3
@@ -12,6 +13,7 @@ def round_decimals(_func=None, *, num_decimals=3):
         @functools.wraps(func)
         def wrapper_round_decimals(*args, **kwargs):
             return round(func(*args, **kwargs), num_decimals)
+
         return wrapper_round_decimals
 
     if _func is None:

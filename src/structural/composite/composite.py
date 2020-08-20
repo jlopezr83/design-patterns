@@ -32,6 +32,7 @@ class RegExp(metaclass=ABCMeta):
 
         if not match or match.group() != input_string:  # No match or the input string is not exactly equal
             return False
+
         return True
 
 
@@ -55,7 +56,7 @@ class CompositeRegExp(RegExp):
         """
         Append new AbstractPattern elements
         and recalculate the reg exp to keep the consistence
-        :param pattern:
+        :param reg_exp:
         :return:
         """
         self._reg_exps.append(reg_exp)
