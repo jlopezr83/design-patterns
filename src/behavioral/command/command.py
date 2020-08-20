@@ -10,7 +10,7 @@ class Command(metaclass=ABCMeta):
         pass
 
 
-class TurnOnCommand(Command):
+class TurnOnComputer(Command):
     """
     Concrete command to turn on the computer
     """
@@ -21,7 +21,7 @@ class TurnOnCommand(Command):
         self._computer.turn_on()
 
 
-class TurnOffCommand(Command):
+class TurnOffComputer(Command):
     """
     Concrete command to turn off the computer
     """
@@ -32,20 +32,33 @@ class TurnOffCommand(Command):
         self._computer.turn_off()
 
 
-class ComplexCommand(Command):
+class RemoveVirus(Command):
     """
-    Concrete command to execute some complex operations. It defines a binding between a Receiver object and an action
+    Concrete complex to remove the viruses. It defines a binding between a receiver and an action
     """
-    def __init__(self, receiver, computer):
-        self._receiver = receiver
+    def __init__(self, antivirus, computer):
+        self._antivirus = antivirus
         self._computer = computer
 
     def execute(self):
-        self._receiver.operation1(self._computer)
-        self._receiver.operation2(self._computer)
+        self._antivirus.remove_virus(self._computer)
+        self._antivirus.clean(self._computer)
 
 
-class Invoker:
+class Antivirus:
+    """
+    Receiver. It knows how to perform the operations associated with carrying out a request
+    """
+    @staticmethod
+    def remove_virus(computer):
+        computer.remove_virus()
+
+    @staticmethod
+    def clean(computer):
+        computer.delete_trash()
+
+
+class ComputerCommands:
     """
     Invoker. It asks the command to carry out the request
     """
@@ -62,21 +75,23 @@ class Invoker:
         self._commands[command_name].execute()
 
 
-class Receiver:
-    """
-    Receiver. It knows how to perform the operations associated with carrying out a request
-    """
-    def operation1(self, computer):
-        computer.increase_counter()
-
-    def operation2(self, computer):
-        computer.duplicate_counter()
-
-
 class Computer:
+    """
+    Class to store the status of the computer
+    """
     def __init__(self):
         self._power = False
-        self._counter = 0
+        self._virus = 10
+        self._removed_files = 10
+
+    def get_power(self):
+        return self._power
+
+    def get_number_virus(self):
+        return self._virus
+
+    def get_number_removed_files(self):
+        return self._removed_files
 
     def turn_on(self):
         self._power = True
@@ -84,14 +99,14 @@ class Computer:
     def turn_off(self):
         self._power = False
 
-    def get_power(self):
-        return self._power
+    def remove_virus(self):
+        if not self._power:
+            return
 
-    def get_counter(self):
-        return self._counter
+        self._virus = 0
 
-    def increase_counter(self):
-        self._counter += 1
+    def delete_trash(self):
+        if not self._power:
+            return
 
-    def duplicate_counter(self):
-        self._counter *= 2
+        self._removed_files = 0

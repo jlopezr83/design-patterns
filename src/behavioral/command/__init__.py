@@ -1,1 +1,1 @@
-from .command import TurnOnCommand, TurnOffCommand, ComplexCommand, Receiver, Invoker, Computer
+from .command import TurnOnComputer, TurnOffComputer, RemoveVirus, Antivirus, ComputerCommands, Computer
