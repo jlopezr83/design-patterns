@@ -34,7 +34,7 @@ class TurnOffComputer(Command):
 
 class RemoveVirus(Command):
     """
-    Concrete complex to remove the viruses. It defines a binding between a receiver and an action
+    Concrete complex command to remove the viruses. It defines a binding between a receiver and an action
     """
     def __init__(self, antivirus, computer):
         self._antivirus = antivirus
