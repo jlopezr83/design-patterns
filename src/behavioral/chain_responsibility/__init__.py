@@ -1,1 +1,1 @@
-from .chain_responsibility import Dispenser
+from .chain_responsibility import ATMDispenser
